@@ -1,0 +1,108 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 80px;
+}
+
+.App-header {
+  background-color: #8800ee;
+  height: 150px;
+  padding: 20px;
+  color: white;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 560px;
+  margin: 15px auto;
+  text-align: center;
+}
+.header button {
+  font-size: 1.2em;
+}
+.header .total {
+  font-size: 1.2em;
+}
+
+.expense_form {
+  border: 2px solid #000;
+  border-radius: 3px;
+  max-width: 560px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.expenses_table {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  border: 2px solid #000;
+  border-radius: 3px;
+  max-width: 560px;
+  margin: 0 auto;
+  padding-bottom: 10px;
+
+}
+
+.expenses_table .expense {
+  display: flex;
+  justify-content: flex-end;
+  border-bottom: 1px solid #000;
+  min-width: 100%;
+  overflow: hidden;
+}
+
+.expenses_table .expense span {
+  margin-right: 5%; 
+  align-self: center;
+}
+
+.expenses_table .titles {
+  align-self: flex-start;
+  padding-left: 15%;
+  margin: 10px;  
+  font-size: 1.2em;
+  margin-bottom: 10%;
+
+}
+
+.sum:before {
+  content: "$";
+  color: green;
+}
+
+h3 {
+  text-align: center;
+}
+
+button {
+  margin: 10px;
+}
+
+
+input[type='date'] {
+  margin-left: 20px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type='number'] {
+    -moz-appearance: textfield;
+    margin-left: 10px;
+}
+
