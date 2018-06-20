@@ -29,11 +29,11 @@ class EditExpense extends React.Component {
 						 dscrInputRef={node => {this.dscrInput = node}} 
 						 sumInputRef={node => {this.sumInput = node}} 
 						 dateInputRef={node => {this.dateInput = node}} 
+						
 				/>
 			</div>
 		)
 	}
-	
 	
 
 	handleSubmit = (e) => {
@@ -54,7 +54,12 @@ class EditExpense extends React.Component {
 		this.dateInput.value = '';
 
 		this.props.dispatch(editExpense(this.newExpense));
+		this.goToHome();
 	}
+
+	goToHome = () => {
+		this.props.history.push("/");
+	}	
 
 }
 

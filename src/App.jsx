@@ -5,6 +5,7 @@ import { bindActionCreators } from 'redux';
 import Header from './containers/Header';
 import ExpensesList from './components/ExpensesList';
 import { updateTotalSum, deleteExpense } from './actions/actions';
+import { sortArray } from './helpers/helpers';
 
 import logo from './money_time.png';
 import './App.css'; 
@@ -18,7 +19,7 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Expenses manager</h1>
         </header>
-        <Header {...this.props}/>
+        <Header {...this.props} />
         <ExpensesList {...this.props} deleteExpense={ this.deleteExpense }/>
       </div>
       
@@ -32,9 +33,11 @@ class App extends Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
+ 
   return {
     expensesState: state.expenses,
     totalState: state.total,
+    sortedExpensesState: sortArray(state.expenses, state.sortField.sortBy),
     ownProps
   };
 }

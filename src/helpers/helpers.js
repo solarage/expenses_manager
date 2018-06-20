@@ -21,7 +21,7 @@ export const getTotalSum = (array, prop) => {
 }
 
 export function sortArray(array, fieldName) {
-	// var sortedArray = [];
+	let sortedArray = [];
 
 	function compare(a, b) {
 		if(a[fieldName] < b[fieldName]) {
@@ -32,7 +32,7 @@ export function sortArray(array, fieldName) {
 		}
 		return 0; //может быть равно b
 	}
-	// sortedArray = array.sort(compare);
-	array.sort(compare);
-	return array;
+	sortedArray = array.sort(compare);
+	
+	return sortedArray;
 }

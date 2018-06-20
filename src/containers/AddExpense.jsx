@@ -25,6 +25,7 @@ class AddExpense extends React.Component {
 						 dscrInputRef={node => {this.dscrInput = node}} 
 						 sumInputRef={node => {this.sumInput = node}} 
 						 dateInputRef={node => {this.dateInput = node}} 
+						 
 				/>
 			</div>
 		)
@@ -49,7 +50,13 @@ class AddExpense extends React.Component {
 		this.dateInput.value = '';
 
 		this.props.dispatch(addExpense(this.newExpense));
+		this.goToHome();
+
 	}
+
+	goToHome = () => {
+		this.props.history.push("/");
+	}	
 
 }
 

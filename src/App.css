@@ -59,12 +59,14 @@
   justify-content: flex-end;
   border-bottom: 1px solid #000;
   min-width: 100%;
-  overflow: hidden;
+  
 }
 
 .expenses_table .expense span {
   margin-right: 5%; 
   align-self: center;
+ /* overflow: auto;*/
+
 }
 
 .expenses_table .titles {
@@ -106,3 +108,34 @@ input[type='number'] {
     margin-left: 10px;
 }
 
+
+
+@media screen and (max-width: 490px) {
+
+  button {
+    width: 15px;
+  }
+
+  .expenses_table .expense {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 15px;
+  }
+  
+  .expenses_table .expense span {
+    flex-basis: 100%;
+    margin-bottom: 10px;
+  }
+
+  .expense_form input {
+    flex-basis: 100%;
+ 
+  }
+
+   .expense_form button {
+      display: block;
+      margin: 10px auto;
+   }
+
+
+}

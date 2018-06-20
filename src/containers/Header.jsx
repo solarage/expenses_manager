@@ -1,14 +1,17 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
+import { updateSortField } from '../actions/actions';
 import Button from '../components/Button';
-import { getTotalSum, sortArray } from '../helpers/helpers';
+import { getTotalSum  } from '../helpers/helpers';
 
 class Header extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {value: "default"}
 	}
+
 
 	render() {
 		const { expensesState, totalState } = this.props;
@@ -33,14 +36,9 @@ class Header extends React.Component {
 	handleSortChange = (event) => {
 		let sortBy = event.currentTarget.value;
 		this.setState({value: event.currentTarget.value});
-		// let sortedArray = sortArray(this.props.expensesState, sortBy);
-		// console.log('sortedArray',sortedArray)
-		sortArray(this.props.expensesState, sortBy);
-		console.log('sortedArray',this.props.expensesState)
-		return this.props.expensesState
+		this.props.dispatch(updateSortField(sortBy));
 	}
 
 }
 
-
-export default Header;
+export default connect()(Header);
