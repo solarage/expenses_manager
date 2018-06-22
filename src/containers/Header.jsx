@@ -4,18 +4,18 @@ import { Link } from 'react-router-dom';
 
 import { updateSortField } from '../actions/actions';
 import Button from '../components/Button';
-import { getTotalSum  } from '../helpers/helpers';
+import { getTotalSum } from '../helpers/helpers';
+import DatePickerEx from '../components/DatePickerEx';
 
 class Header extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = {value: "default"}
+		this.state = {value: this.props.sortFieldState.sortBy}
 	}
 
-
+	
 	render() {
-		const { expensesState, totalState } = this.props;
-		console.log('totalSum', totalState.totalSum)
+		const { expensesState } = this.props;
 		return (
 		  <div className="header">
 			<div className="sort mdc-select">
@@ -26,8 +26,9 @@ class Header extends React.Component {
 				</select>
 				<div className="mdc-line-ripple"></div>
 			</div>
+			<DatePickerEx />
 			<Link to="/add"><Button btnName="Add" /></Link>
-			<div className="total">Total: {getTotalSum(expensesState,"sum")}</div>
+		  	<div className="total">Total: {getTotalSum(expensesState,"sum")}</div>
 		  </div>
 		  
 		);

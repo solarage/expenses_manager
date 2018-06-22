@@ -29,6 +29,7 @@
 }
 .header button {
   font-size: 1.2em;
+  height: 50px;
 }
 .header .total {
   font-size: 1.2em;
@@ -108,12 +109,23 @@ input[type='number'] {
     margin-left: 10px;
 }
 
+.datePickerEx div {
+  max-width: 100px;
+}
 
 
 @media screen and (max-width: 490px) {
 
+  .header {
+    flex-direction: column;
+  }
+
   button {
     width: 15px;
+  }
+
+  .header button {
+    margin: 20px;
   }
 
   .expenses_table .expense {

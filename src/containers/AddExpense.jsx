@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { addExpense } from '../actions/actions';
 import Expense from '../components/Expense';
-import { getRandomId } from '../helpers/helpers';
+import { getRandomId, getYMDDate } from '../helpers/helpers';
 
 class AddExpense extends React.Component {
 	constructor(props) {
@@ -19,8 +19,9 @@ class AddExpense extends React.Component {
 			<div>
 				<h3>Add expense</h3>
 				<Expense expensesActions={this.expensesActions}
-						 expensesState={this.expensesState} 
-						 btnName="Save" 
+						 expensesState={this.expensesState}
+						 defaultDate={getYMDDate(this)} 
+						 btnName="Add" 
 						 saveExpense={this.handleSubmit} 
 						 dscrInputRef={node => {this.dscrInput = node}} 
 						 sumInputRef={node => {this.sumInput = node}} 
@@ -59,8 +60,6 @@ class AddExpense extends React.Component {
 	}	
 
 }
-
-
 
 
 AddExpense = connect()(AddExpense)

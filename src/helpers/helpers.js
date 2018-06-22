@@ -1,6 +1,10 @@
+import moment from 'moment/moment';
 
-export function getTodaysDate(datePicker) {
-	return datePicker.value = new Date().toLocaleString().slice(0, 20);
+
+export function getYMDDate(datePicker) {
+	console.log('datePicker',datePicker)
+	return datePicker.value = moment().format('YYYY-MM-DD');
+
 }
 
 

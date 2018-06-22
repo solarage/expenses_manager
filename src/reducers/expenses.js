@@ -1,19 +1,7 @@
 import { ADD_EXPENSE, EDIT_EXPENSE, DELETE_EXPENSE } from '../actions/actions';
 
-const initialState = [
-	{
-		id: 1,
-		description: null,
-		sum: null,
-		date: null
-	},
-	{
-		id: 2,
-		description: null,
-		sum: null,
-		date: null
-	}
-]
+
+const initialState = localStorage.getItem('expenses') ? JSON.parse(localStorage.getItem('expenses')) : [];
 
 const expenses = (state = initialState, action) => {
 	switch(action.type) {
@@ -41,6 +29,7 @@ const expenses = (state = initialState, action) => {
 
 		case DELETE_EXPENSE :
 			return state.filter( expense => expense.id !== action.id );
+
 	}
 	return state;
 }

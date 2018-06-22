@@ -37,6 +37,7 @@ const mapStateToProps = (state, ownProps) => {
   return {
     expensesState: state.expenses,
     totalState: state.total,
+    sortFieldState: state.sortField,
     sortedExpensesState: sortArray(state.expenses, state.sortField.sortBy),
     ownProps
   };

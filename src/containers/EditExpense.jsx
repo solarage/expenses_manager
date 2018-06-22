@@ -70,7 +70,6 @@ const mapStateToProps = (state, ownProps) => {
 }
 
 
-
 EditExpense = connect(mapStateToProps)(EditExpense)
 
 export default EditExpense;

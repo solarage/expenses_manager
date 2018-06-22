@@ -1,8 +1,6 @@
 import { UPDATE_SORTFIELD } from '../actions/actions';
 
-const initialState = {
-	sortBy: "default"
-}
+const initialState = localStorage.getItem('sortField') ? JSON.parse(localStorage.getItem('sortField')) : { sortBy: "default" };
 
 const sortField = (state = initialState, action) => {
 	switch(action.type) {
