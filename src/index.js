@@ -30,6 +30,7 @@ const store = createStore(connectRouter(history)(reducer),
 store.subscribe(() => {
 	localStorage.setItem('expenses', JSON.stringify(store.getState().expenses) );
 	localStorage.setItem('sortField', JSON.stringify(store.getState().sortField) );
+	localStorage.setItem('filterField', JSON.stringify(store.getState().filterField) );
 });
 
 

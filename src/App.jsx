@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux';
 import Header from './containers/Header';
 import ExpensesList from './components/ExpensesList';
 import { updateTotalSum, deleteExpense } from './actions/actions';
-import { sortArray } from './helpers/helpers';
+import { sortArray, filterRangeDate } from './helpers/helpers';
 
 import logo from './money_time.png';
 import './App.css'; 
@@ -38,7 +38,9 @@ const mapStateToProps = (state, ownProps) => {
     expensesState: state.expenses,
     totalState: state.total,
     sortFieldState: state.sortField,
+    filterFieldState: state.filterField,
     sortedExpensesState: sortArray(state.expenses, state.sortField.sortBy),
+    filteredExpensesState: filterRangeDate(state.expenses, state.filterField.from, state.filterField.to),
     ownProps
   };
 }

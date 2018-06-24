@@ -2,11 +2,17 @@ import moment from 'moment/moment';
 
 
 export function getYMDDate(datePicker) {
-	console.log('datePicker',datePicker)
 	return datePicker.value = moment().format('YYYY-MM-DD');
 
 }
 
+export function filterRangeDate(array, from, to) {
+	return array.filter( expense => {
+		const dateObj = new Date(expense.date); 
+		if (from <= dateObj && dateObj <= to)
+			return expense
+	});
+}
 
 export function getRandomId() {
 	return new Date().getTime();

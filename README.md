@@ -1,4 +1,4 @@
 # EXPENSES MANAGER
-Add, edit, delete and calculate expenses
+Add, edit, delete, sort and filter expenses
 
-![screenshot-2018-6-22 expenses manager 1](https://user-images.githubusercontent.com/35805922/41765064-a292cf62-760b-11e8-890b-bdb11dc1faa3.png)
+![screenshot-2018-6-24 expenses manager](https://user-images.githubusercontent.com/35805922/41815873-c44bdbd8-777f-11e8-858c-3ef435304c9b.png)

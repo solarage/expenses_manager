@@ -66,7 +66,6 @@
 .expenses_table .expense span {
   margin-right: 5%; 
   align-self: center;
- /* overflow: auto;*/
 
 }
 
@@ -125,7 +124,7 @@ input[type='number'] {
   }
 
   .header button {
-    margin: 20px;
+    margin: 30px;
   }
 
   .expenses_table .expense {

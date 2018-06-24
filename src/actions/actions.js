@@ -2,10 +2,10 @@ export const ADD_EXPENSE = 'ADD_EXPENSE';
 export const EDIT_EXPENSE = 'EDIT_EXPENSE';
 export const DELETE_EXPENSE = 'DELETE_EXPENSE';
 
-export const FILTER_EXPENSES = 'FILTER_EXPENSES';
-export const SORT_EXPENSES = 'SORT_EXPENSES';
 export const UPDATE_TOTALSUM = 'UPDATE_TOTALSUM';
 export const UPDATE_SORTFIELD = 'UPDATE_SORTFIELD';
+export const UPDATE_FILTERFIELD_FROM = 'UPDATE_FILTERFIELD_FROM';
+export const UPDATE_FILTERFIELD_TO = 'UPDATE_FILTERFIELD_TO';
 
 //
 
@@ -54,5 +54,19 @@ export const updateSortField = (sortBy) => {
 	return {
 		type: UPDATE_SORTFIELD,
 		sortBy: sortBy
+	}
+}
+
+export const updateFilterFieldFrom = (from) => {
+	return {
+		type: UPDATE_FILTERFIELD_FROM,
+		from: from,
+	}
+}
+
+export const updateFilterFieldTo = (to) => {
+	return {
+		type: UPDATE_FILTERFIELD_TO,
+		to: to
 	}
 }

@@ -5,14 +5,14 @@ import Button from './Button';
 class ExpensesList extends React.Component {
 
 	render() {
-		const { deleteExpense, sortedExpensesState } = this.props;
+		const { deleteExpense, sortedExpensesState, filteredExpensesState } = this.props;
 		return (
 			<div className="expenses_table">
 				<div className="titles">
 					<span>Описание /</span>
 					<span> Сумма</span>
 				</div>
-				{sortedExpensesState.map(expense => 
+				{filteredExpensesState.map(expense => 
 					<div key={expense.id} {...expense} className="expense">
 						<span>{expense.description}</span> 
 						<span className="sum">{expense.sum}</span>
